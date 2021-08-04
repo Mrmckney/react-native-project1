@@ -29,6 +29,7 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <Text style={styles.customText}>Hello Matthew McKney</Text>
         <StatusBar style="auto" />
+        <View>
         <ImageBackground source={image} resizeMode='cover' style={{ ...styles.container}}>
           {students.map(student => {
             return (
@@ -36,6 +37,7 @@ export default function App() {
             )
           })}
         </ImageBackground>
+        </View>
       </SafeAreaView>
     </ScrollView>
   );
