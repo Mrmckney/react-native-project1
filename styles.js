@@ -22,6 +22,20 @@ export default StyleSheet.create({
     },
     button: {
         color: 'red',
+    },
+    inputbox: {
+        borderColor: '#666', 
+        borderStyle: 'solid', 
+        borderWidth: 2, 
+        marginHorizontal: 20,
+        paddingVertical: 10
+    },
+    customBtn: {
+        backgroundColor: 'lightgray', 
+        paddingVertical: 10, 
+        marginHorizontal: 50, 
+        borderRadius: 10, 
+        marginVertical: 40
     }
 })
 

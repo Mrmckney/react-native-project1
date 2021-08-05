@@ -20,10 +20,6 @@ function Home({navigation}) {
       .catch(err => alert(err))
   }, [])
 
-    const routeToRestaurant = () => {
-        navigation.navigate('RestaurantDetails')
-    }
-
     return(
         <View>
             <Text>
@@ -32,16 +28,19 @@ function Home({navigation}) {
             <ScrollView>
                 <SafeAreaView style={styles.container}>
                     <Text style={styles.customText}>Hello Matthew McKney</Text>
-                    <StatusBar style="auto" />
-                    <ImageBackground source={image} resizeMode='cover' style={{ ...styles.container}}>
-                    {restaurants?.map((singleRestaurant, index) => {
-                        return (
-                        <>
-                        <Box key={singleRestaurant.id} item={singleRestaurant}/>
-                        <Button title='Details' color='red' onPress={routeToRestaurant}/>
-                        </>
-                        )
-                    })}
+                        <StatusBar style="auto" />
+                            <ImageBackground source={image} resizeMode='cover' style={{ ...styles.container}}>
+                            {restaurants?.map((singleRestaurant, index) => {
+                                return (
+                                    <View key={singleRestaurant.id}>
+                                        <Box item={singleRestaurant}/>
+                                        <Button title='Details' color='red' onPress={() => {
+                                            navigation.navigate('RestaurantDetails', {restaurant: singleRestaurant })
+                                        }}
+                                        />
+                                    </View>
+                                )
+                            })}
                     </ImageBackground>
                 </SafeAreaView>
             </ScrollView>
