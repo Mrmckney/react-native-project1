@@ -3,15 +3,15 @@ import { View, Text } from 'react-native'
 
 import styles from '../styles'
 
-function Box({entireStudent}) { // receiving destructuring entireStudent from props
+function Box({item}) { // receiving destructuring entireStudent from props
 
-    const {name, city, age} = entireStudent // destructuring name, city, age from entireStudent
+    const {name, photoUrl, rating, address} = item
 
     return(
         <View style={styles.box}>
             <Text>{name}</Text>
-            <Text>{age}</Text>
-            <Text>{city}</Text>
+            <Text>{address}</Text>
+            <Text>{rating}</Text>
         </View>
     )
 }
