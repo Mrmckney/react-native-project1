@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
+import { Input, Text, Button } from 'react-native-elements'
+import { Ionicons } from '@expo/vector-icons'
 
 import styles from '../styles'
 
@@ -34,34 +36,29 @@ function AddNewScreen() {
 
     return(
         <View>
-            <Text>
+            <Text h3>
                 this is add new screen
             </Text>
-            <TextInput 
+            <Input 
                 placeholder='Restaurant Name' 
-                style={styles.inputbox}
                 // keyboardType='email-address'
                 autoCorrect={false}
                 onChangeText={text => setRestaurantName(text)}
             />
-            <TextInput
+            <Input
                 placeholder='Address Here'
-                style={styles.inputbox}
                 onChangeText={text => setAddress(text)}
             />
-            <TextInput
+            <Input
                 placeholder='photo URL'
-                style={styles.inputbox}
                 onChangeText={text => setPhotoUrl(text)}
             />
-            <TextInput
+            <Input
                 placeholder='Rating'
-                style={styles.inputbox}
                 onChangeText={text => setRating(text)}
             />
-            <TouchableOpacity style={styles.customBtn} onPress={handleNewRestaurant}>
-                <Text style={{color: 'black'}}>Send the Restaurant</Text>
-            </TouchableOpacity>
+            <Ionicons name="md-checkmark-circle" size={32} color="green"/>
+            <Button style={{width: 200}} title='Send New Restaurant' onPress={handleNewRestaurant}/>
         </View>
     )
 }

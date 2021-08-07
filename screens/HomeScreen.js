@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
-import { View, Text, Button, ScrollView, SafeAreaView, StatusBar, ImageBackground, Image } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView, StatusBar, ImageBackground, Image } from 'react-native'
+import { Button } from 'react-native-elements'
 
 import Box from '../components/Box'
 import styles from '../styles'
